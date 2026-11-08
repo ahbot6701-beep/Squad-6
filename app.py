@@ -423,6 +423,10 @@ def connect():
         "ip_chat": ip_chat,
         "port_chat": port_chat
     })
+    
+@app.route('/')
+def home():
+    return jsonify({"message": "API is running", "endpoints": ["/connect", "/send_sq"]})
 
 @app.route('/send_sq', methods=['POST'])
 def send_sq():
